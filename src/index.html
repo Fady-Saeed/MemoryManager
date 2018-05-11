@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Memory Manager</title>
+	<link rel="stylesheet" href="../assets/css/semantic.min.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body class="ui padded inverted segment">
+	<nav class="navbar">
+		<!-- <div> -->
+			<p>Memory Manager</p>
+			<!-- <div class="icons">
+					<i class="minimize"><i class="icon minimize"></i> </i>
+					<i class="maximize"><i class="icon maximize"></i> </i>
+					<i class="close"><i class="icon close"></i> </i>
+			</div> -->
+			<div class="util__buttons">
+				<a class="button" id="expandButton"> <i class="icon expand arrows alternate"></i></a>
+				<a class="button" id="minimizeButton"><i class="icon minus"></i></a>
+				<a class="button" id="closeButton"><i class="icon close"></i></a>
+			</div>
+
+		<!-- </div> -->
+
+
+	</nav>
+
+	<div class="ui grid">
+
+		<div class="fourteen wide column centered">
+			<!-- <div class="ui buttons">
+				<button class="ui button " id="firstFitOption">First Fit</button>
+				<button class="ui button" id="bestFitOption">Best Fit</button>
+			</div> -->
+			<div class="ui form">
+				<div class="field">
+					<div class="ui selection dropdown">
+						<input type="hidden" name="algorithm" id="algorithm">
+						<i class="dropdown icon"></i>
+						<div class="default text">Algorithm</div>
+						<div class="menu">
+							<!-- <div class="item" data-value="firstFitOption">First Fit</div>
+							<div class="item" data-value="bestFitOption">Best Fit</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="four wide column ui inverted">
+			<div class="ui inverted horizontal divider">Holes</div>
+
+			<form class="ui form inverted">
+				<div class="field">
+					<input type="text" name="start-address" placeholder="Start Address" id="startAddress">
+				</div>
+				<div class="field">
+					<input type="text" name="holeSize" placeholder="Size" id="holeSize">
+				</div>
+				<button class="ui inverted animated fade green button btn" type="submit" id="addHole">
+					<div class="visible content">Add</div>
+					<div class="hidden content">
+						<i class="plus icon"></i>
+					</div>
+				</button>
+			</form>
+
+
+			<table class="ui inverted table four wide column" id="holesTbl">
+				<thead>
+					<tr>
+						<th>Start Address</th>
+						<th>Size</th>
+					</tr>
+				</thead>
+				<tbody id="holesTblBody">
+				</tbody>
+			</table>
+		</div>
+
+		<div class="one wide column inverted segment"></div>
+
+		<div class="four wide column ui inverted">
+			<div class="ui inverted horizontal divider">Processes</div>
+
+			<form class="ui form inverted">
+				<div class="field">
+					<input type="text" name="pid" placeholder="Process ID" id="pid">
+				</div>
+				<div class="field">
+					<input type="text" name="pSize" placeholder="Process Size" id="pSize">
+				</div>
+				<button class="ui inverted animated fade green button btn" type="submit" id="addProcess">
+					<div class="visible content">Allocate</div>
+					<div class="hidden content">
+						<i class="plus icon"></i>
+					</div>
+				</button>
+			</form>
+
+
+			<table class="ui inverted table four wide column" id="processTbl">
+				<thead>
+					<tr>
+						<th>Process ID</th>
+						<th>Size</th>
+						<th>
+							<i class="options icon"></i>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="processTblBody">
+				</tbody>
+			</table>
+		</div>
+		<div class="one wide column inverted segment"></div>
+
+		<div class="four wide column ui inverted">
+			<div class="ui inverted horizontal divider">Memory Diagram</div>
+			<div id="memoryChart">
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Insert this line above script imports  -->
+	<script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+	<!-- normal script imports etc  -->
+	<script src="../assets/js/jquery-3.1.1.min.js"></script>
+	<script src="../assets/js/semantic.min.js"></script>
+	<script>
+		$('.dropdown').dropdown({
+			values: [
+				{
+					name: 'First Fit',
+					value: 'firstFit',
+					selected: true
+				},
+				{
+					name: 'Best Fit',
+					value: 'bestFit'
+				}
+			]
+		});
+	</script>
+	<!-- Insert this line after script imports -->
+	<script>if (window.module) module = window.module;</script>
+
+	<!-- <script src="../assets/js/jquery-3.2.1.min.js"></script> -->
+	<!-- <script src="../assets/js/semantic.min.js"></script> -->
+
+	<script src="../assets/js/index.js"></script>
+</body>
+
+</html>

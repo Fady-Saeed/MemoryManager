@@ -1,0 +1,252 @@
+html{
+    -webkit-app-region: drag;
+}
+body{
+    margin: 0 !important
+}
+div,a,button,input,table,p,h1,h2,h3,h5,h6,span,.icon{
+    -webkit-app-region: no-drag;
+}
+.navbar{
+    height: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.util__buttons {
+    order: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-self: center;
+    color: #000;
+    width: 100px;
+    padding: 8px;
+  }
+  .util__buttons .button {
+    display: inline-block;
+    background: #ccc;
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    padding: 1px 1px 1px 2px;
+    border-radius: 100%;
+    transition: all 0.15s ease;
+    line-height: 13px;
+    text-align: center;
+  }
+  .util__buttons .button:hover {
+    cursor: pointer;
+  }
+  .util__buttons .button i {
+    font-size: 10px;
+  }
+  #closeButton {
+    background: #d86258;
+    color: #d86258;
+  }
+  #closeButton:hover {
+    background: #d24b3f;
+    color: #222;
+    font-weight: 700;
+  }
+  #minimizeButton {
+    background: #f0bd4e;
+    color: #f0bd4e;
+  }
+  #minimizeButton:hover {
+    background: #eeb231;
+    color: #222;
+    font-weight: 700;
+  }
+  #expandButton {
+    background: #64ca57;
+    color: #64ca57;
+  }
+  #expandButton:hover {
+    background: #50c341;
+    color: #222;
+    font-weight: 700;
+  }
+
+.navbar p{
+    display: flex;
+    align-content: center;
+    padding-left: 1%;
+    margin: 0
+}
+.navbar .pull-right{
+    justify-content: end
+}
+/* .navbar .icon{
+    display: flex;
+    justify-content: center;
+    float: right;
+    height: 18px;
+    width: 18px;
+    align-items: flex-end;
+    font-size: 0.8em;
+    padding-left: 1px
+}
+.navbar .icon{
+    border-radius: 50%;
+}
+.navbar .icon .icon{
+    visibility: hidden
+}
+.navbar .icon:hover .icon{
+    visibility: visible
+}
+.navbar .icon.minimize{
+    background-color: #ffbd4c;
+    border: 1px solid #e09e3e;
+}
+.navbar .icon.minimize:active {
+    background: #c08e38;
+    border: 1px solid #af7c33;
+    color: #5a2607
+  }
+
+.navbar .icon.maximize{
+    background-color: #00ca56;
+    border: 1px solid #14ae46;
+}
+.navbar .icon.maximize:active {
+    background: #029740;
+    border: 1px solid #128435;
+    color: #003107
+  }
+
+.navbar .icon.close{
+    background-color: #ff5c5c;
+    border: 1px solid #e33e41;
+}
+.navbar .icon.close:active {
+    background: #c14645;
+    border: 1px solid #b03537;
+    color: #4e0002
+  } */
+.ui.grid{
+    margin-top: 30px
+}
+.btn{
+    width: 100% !important;
+}
+.ui.table{
+    border-width: 0 !important;
+}
+.memoryChart{
+    position: relative;
+}
+.memoryCell{
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    position: absolute;
+    /* -webkit-transition: all 0.5s ease-in-out 0s !important;
+    -moz-transition: all 1s ease-in-out 0s !important;
+    -o-transition: all 1s ease-in-out 0s !important;
+    transition: all 1s ease-in-out 0s !important; */
+}
+.memoryCell.hasProcess .memoryCellProcessId{
+    font-weight: 700;
+    background-color: transparent
+}
+.memoryCell .memoryCellAddress{
+    padding: 0 10% 0 0 !important;
+    height:100%;
+    -webkit-transition: all 1s ease-in-out 0s !important;
+    -moz-transition: all 1s ease-in-out 0s !important;
+    -o-transition: all 1s ease-in-out 0s !important;
+    transition: all 1s ease-in-out 0s !important;
+}
+.memoryCell .memoryCellProcessId{
+    border:2px solid #FFF;
+    border-bottom: 0;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100%;
+    padding: 0 !important;
+    text-align: right !important;
+    background-color: #FFF
+}
+.memoryCell .memoryCellProcessId.blank{
+    background-color: transparent;
+}
+.memoryCell:last-of-type .memoryCellProcessId{
+    /*height: 0;
+    padding: 0 !important;
+    margin: 0;*/
+    border-bottom:2px solid #FFF;
+}
+.memoryCell:last-of-type:after{
+    content: attr(data-end);
+    width:  100%;
+    height: 0;
+    margin-top: -10px
+}
+
+.memoryCell:before{
+    content: attr(data-start);
+    width:  100%;
+    height: 0
+}
+tr{
+    animation: fadein 1.5s;
+    -moz-animation: fadein 1.5s;
+    -webkit-animation: fadein 1.5s;
+    -o-animation: fadein 1.5s;
+}
+tr td i{
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: #CCC
+}
+tr td i:hover{
+    color: #FFF
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein {
+    /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein {
+    /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
